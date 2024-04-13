@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package proto;
+
+option go_package = "github.com/HyunSu1768/go-grpc-example/proto";
+
+service RuntimeService {
+  rpc Version(VersionRequest) returns (VersionResponse) {}
+}
+
+message VersionRequest {
+  string version = 1;
+}
+
+message VersionResponse {
+  string version = 1;
+  string runtime_name = 2;
+  string runtime_version = 3;
+  string runtime_api_version = 4;
+}
